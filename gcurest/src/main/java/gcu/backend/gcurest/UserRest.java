@@ -16,14 +16,14 @@ public class UserRest {
     {
         return service.findAll();
     }
-    //retrieves a specific user detail
+    
     @GetMapping("/users/{id}")
     public User retriveUser(@PathVariable int id)
     {
         return service.findOne(id);
     }
     
-    @PutMapping("/users")
+    @PutMapping("/users/{id}")
     public String updateUser(@PathVariable int id, @RequestBody User user) {
         service.updateUser(id, user);
         return "update OK";
