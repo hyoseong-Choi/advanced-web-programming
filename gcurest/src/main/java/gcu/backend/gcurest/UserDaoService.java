@@ -34,9 +34,9 @@ public class UserDaoService {
     }
     
     public void updateUser(int id, User requser) {
-        for (User user : requser) {
+        for (User user : users) {
             if (user.getId() == id) {
-                user.setName("HyoSung");
+                user.setName(requser.getName());
                 user.setDob(new Date());
             }
         }
