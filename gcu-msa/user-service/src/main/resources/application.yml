@@ -1,8 +1,9 @@
 server:
-  port: 8081
+  port: 8084
 spring:
   application:
-    name: memberservice
+    name: userservice
+
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/gcumall?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&allowPublicKeyRetrieval=true&useSSL=false
     username: root
@@ -18,13 +19,3 @@ spring:
       base-path: /api
       default-page-size: 10
       max-page-size: 10
-
-eureka:
-  instance:
-    preferIpAddress: true
-    lease-renewal-interval-in-seconds: 30
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/
