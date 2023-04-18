@@ -12,10 +12,10 @@ public class OrderController {
     @Autowired
     private ProductServiceFeignClient productServiceFeignClient;
     
-    @GetMapping("/order")
-    public String order() {
-        return memberServiceFeignClient.getMember().getName() + " requested an order.";
-    }
+//    @GetMapping("/order")
+//    public String order() {
+//        return memberServiceFeignClient.getMember().getName() + " requested an order.";
+//    }
     
     @GetMapping("/order/{id}")
     public String orderId(@PathVariable Long id) {
