@@ -1,7 +1,6 @@
 package gcu.backend.memberservice;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,9 +15,10 @@ public class MemberController {
     }
 
     @PostMapping("/api/member")
-    public String create(@RequestBody Member member) {
+    public EntityModel create(@RequestBody Member member) {
         memberRepository.save(member);
-        return "create ok!";
+        EntityModel entityModel = EntityModel.of(member);
+        return entityModel;
     }
 
     @GetMapping("/api/member/{id}")
